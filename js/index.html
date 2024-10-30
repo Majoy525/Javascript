@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT SESSION</title>
+    <link rel="stylesheet" href="/css/custom.css">
+</head>
+<body>
+    <h1 id="result"></h1>
+    <h2 class="output"></h2>
+
+    <button type="button" onclick="alert(ComputeTwoNumbers(7,3));">Click Me</button>
+
+    <button type="button" onclick="confirmSubmission()">Click Me Again</button>
+
+    <br><br>
+    <h3 id="computeResult"></h3>
+    
+    <script src="/js/Custom.js"></script>
+
+    <script type="text/javascript">
+        document.write("HELLO WORLD ");
+        console.log("Hello World");
+
+        let name= "MARY JOY ARELLANO";
+        var age =20;
+        const remarks ="STUDENT";
+
+        document.write(name +" " + age +" " + remarks + "<br>");
+
+        document.getElementsByClassName("output")[0].innerHTML = name +" " + age +" " + remarks;
+
+        function displayName(fullName){
+            return"Welcome," + fullName +"<br>";
+        }
+        document.write();
+       console.log(displayName("MARY JOY ARELLANO"));
+        
+        function ComputeTwoNumbers(a,b){
+            return a + b;
+        }
+
+        console.log(ComputeTwoNumbers(7,3));
+        document.write("Computed result: " + ComputeTwoNumbers(7,3));
+
+    </script>
+    <h1 id="result">Student Information</h1>
+    <h3 id="outputName"></h3>
+    <h3 id="totalGrade"></h3>
+    <h3 id="remarks"></h3>
+
+    <button type="button" onclick="processInputs()">Submit Details</button>
+
+    <script type="text/javascript">
+        function processInputs() {
+            let studentName = prompt("Enter your name:");
+            console.log("Name entered:", studentName);
+
+            let totalItems = prompt("Enter total number of items:");
+            console.log("Total items:", totalItems);
+
+            let totalScore = prompt("Enter your total score:");
+            console.log("Total score:", totalScore);
+
+            totalItems = parseInt(totalItems);
+            totalScore = parseInt(totalScore);
+
+            if (isNaN(totalItems) || isNaN(totalScore)) {
+                alert("Please enter valid numbers for total items and score.");
+                return;
+            }
+            
+            let grade= -4 * (totalScore / totalItems) + 5;
+
+            let status = (grade>= 3.1)? "Failed" : "Passed";
+            
+            alert("Your Name is: " + studentName + "\nYour Total Score is: " + grade + "\nYour remarks is: " + status);
+            document.getElementById("outputName").innerHTML = "Your name: " + studentName;
+            document.getElementById("totalGrade").innerHTML = "Your total grade is: " + grade.toFixed(2);
+            document.getElementById("remarks").innerHTML = "Your remarks are: " + status;
+
+            console.log("Name: " + studentName);
+            console.log("Total Items: " + totalItems);
+            console.log("Total Score: " + totalScore);
+            console.log("grade score: " + grade.toFixed(2));
+            console.log("Status: " + status);
+        }
+    </script>
+</body>
+</html>
